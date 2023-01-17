@@ -1,0 +1,170 @@
+@keyframes flashing-virian {
+  0% {
+    background: #fff;
+  }
+  25% {
+    background: #ff1493;
+  }
+  50% {
+    background: #00ffff;
+  }
+  75% {
+    background: #ff7f50;
+  }
+  100% {
+    background: #9400d3;
+  }
+}
+
+@keyframes virian {
+  0% {
+    opacity: 0.05;
+    transform: scale(0.01) rotate(0deg) translate(50%, 50%);
+  }
+
+  50% {
+    opacity: 0.1;
+    transform: scale(1) rotate(360deg) translate(50%, 50%);
+  }
+
+  100% {
+    opacity: 0.05;
+    transform: scale(0.01) rotate(0deg) translate(50%, 50%);
+  }
+}
+
+@keyframes virian2 {
+  0% {
+    opacity: 0.05;
+  }
+
+  50% {
+    opacity: 0.01;
+  }
+
+  100% {
+    opacity: 0.05;
+  }
+}
+
+.container {
+  position: relative;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: block;
+  height: 100vh;
+  overflow: hidden;
+  animation: flashing-virian 0.1s infinite;
+}
+
+/* Virian Hand */
+
+.virian-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  padding: 20px 40px;
+  border: 3px solid #ded;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.virian-obrazek {
+  position: relative;
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none !important;
+  width: 250px;
+  height: 250px;
+}
+
+.virian-obrazek p {
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.virian-wrap img {
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px 0px rgb(0 0 0 / 30%);
+  transition: ease 0.2s transform;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.virian-wrap img:focus,
+.virian-wrap img:hover {
+  transform: scale(1.1);
+}
+
+.virian-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 20px;
+  font-family: Poppins, sans-serif;
+  line-height: 1.4;
+  margin-top: 40px;
+}
+
+/* Latające Rece */
+.virian {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+.virian img {
+  position: absolute;
+  width: 300px;
+  animation: virian 5s ease-in-out 2s infinite;
+  opacity: 0;
+}
+
+.virian img:nth-child(1) {
+  top: 0;
+  left: 0;
+  animation-delay: 1s;
+}
+
+.virian img:nth-child(2) {
+  bottom: 0;
+  left: 0;
+  animation-delay: 2s;
+}
+
+.virian img:nth-child(3) {
+  top: 0;
+  right: 0;
+  animation-delay: 3s;
+}
+
+.virian img:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  animation-delay: 4s;
+}
+
+.virian img:nth-child(5) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  animation: virian2 5s ease-in-out infinite;
+}
